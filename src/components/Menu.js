@@ -1,23 +1,22 @@
 import React from 'react';
 
-function Menu({ items }) {
+const Menu = ({ items, category }) => {
+  const filteredItems = category
+    ? items.filter(item => item.category === category)
+    : items;
+
   return (
-    <div className="menu-container">
-      {items.map(item => (
-        <div
-          key={item.id}
-          className="menu-item"
-          data-test-id={`menu-item-${item.category.toLowerCase()}`}
-        >
+    <div className="menu">
+      {filteredItems.map(item => (
+        <div key={item.id} className="menu-item" data-test-id={`menu-item-${item.category.toLowerCase()}`}>
           <img src={item.image} alt={item.name} />
-          <div>
-            <h4>{item.name}</h4>
-            <p>{item.price}</p>
-          </div>
+          <h3>{item.name}</h3>
+          <p>{item.category}</p>
+          <p>${item.price.toFixed(2)}</p>
         </div>
       ))}
     </div>
   );
-}
+};
 
 export default Menu;
