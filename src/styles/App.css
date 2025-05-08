@@ -10,9 +10,9 @@ button{
     justify-content: center;
     align-items: center;
 }
-
 #main {
   padding: 20px;
+  font-family: Arial, sans-serif;
 }
 
 .category-buttons {
@@ -21,26 +21,18 @@ button{
 
 .category-buttons button {
   margin-right: 10px;
-  padding: 10px 20px;
+  padding: 8px 16px;
+  cursor: pointer;
 }
 
 .menu {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
 }
 
 .menu-item {
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  border: 1px solid #ddd;
   padding: 15px;
-  width: 200px;
-  text-align: center;
-}
-
-.menu-item img {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 4px;
+  border-radius: 5px;
 }

@@ -8,11 +8,10 @@ const Menu = ({ items, category }) => {
   return (
     <div className="menu">
       {filteredItems.map(item => (
-        <div key={item.id} className="menu-item" data-test-id={`menu-item-${item.category.toLowerCase()}`}>
-          <img src={item.image} alt={item.name} />
+        <div key={item.id} className="menu-item">
           <h3>{item.name}</h3>
-          <p>{item.category}</p>
-          <p>${item.price.toFixed(2)}</p>
+          <p>Category: {item.category}</p>
+          <p>Price: ${item.price.toFixed(2)}</p>
         </div>
       ))}
     </div>
