@@ -18,16 +18,35 @@ const App = () => {
     setFilteredCategory(category);
   };
 
-  return (
-    <div id="main">
-      <div className="category-buttons">
-        <button id="filter-btn-1" onClick={() => filterItems('Breakfast')}>Breakfast</button>
-        <button id="filter-btn-2" onClick={() => filterItems('Lunch')}>Lunch</button>
-        <button id="filter-btn-3" onClick={() => filterItems('Shakes')}>Shakes</button>
-      </div>
-      <Menu items={menuItems} category={filteredCategory} />
+// App.js
+return (
+  <div id="main" data-testid="main-container">
+    <div className="category-buttons">
+      <button 
+        id="filter-btn-1" 
+        data-testid="breakfast-btn"
+        onClick={() => filterItems('Breakfast')}
+      >
+        Breakfast
+      </button>
+      <button 
+        id="filter-btn-2" 
+        data-testid="lunch-btn"
+        onClick={() => filterItems('Lunch')}
+      >
+        Lunch
+      </button>
+      <button 
+        id="filter-btn-3" 
+        data-testid="shakes-btn"
+        onClick={() => filterItems('Shakes')}
+      >
+        Shakes
+      </button>
     </div>
-  );
+    <Menu items={menuItems} category={filteredCategory} />
+  </div>
+);
 };
 
 export default App;
